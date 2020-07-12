@@ -1,0 +1,63 @@
+<div class="container">
+    <form [formGroup]= "loginform" method="POST">
+      
+      <h3>Purchase Details</h3>
+       
+        <div class="form-group">
+        <label>Product Name</label>
+      <input [class.is-invalid]= "productname.invalid && productname.touched "   formControlName="productname" type="text" class="form-control">
+          <div *ngIf="productname.invalid && productname.touched">
+            <small *ngIf ="productname.errors?.required" class= "text-danger"> Name is required</small>
+            <small *ngIf="productname.errors?.minlength" class= "text-danger">Must be atleast 3 characters </small>
+          </div>
+      </div>
+      
+  
+    <div class="form-group">
+      <label>Product Serial No</label>
+      <input [class.is-invalid]= "productno.invalid && productno.touched " formControlName= "productno" type="text" class="form-control">
+       <div *ngIf="productno.invalid && productno.touched">
+            <small *ngIf ="productno.errors?.required" class= "text-danger">Is required</small>
+  
+       </div>
+     </div>
+  
+    <div class="form-group">
+      <label>Quantity Received</label>
+      <input [class.is-invalid]= "quantity.invalid && quantity.touched " formControlName= "quantity" type="text" class="form-control">
+  
+      <div *ngIf="quantity.invalid && quantity.touched">
+            <small *ngIf ="productno.errors?.required" class= "text-danger">Is required</small>
+  
+       </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Price per unit</label>
+      <input [class.is-invalid]= "price.invalid && price.touched "formControlName= "price" type="text" class="form-control">
+  
+      <div *ngIf="price.invalid && price.touched">
+            <small *ngIf ="price.errors?.required" class= "text-danger">Is required</small>
+            <small *ngIf ="price.errors?.pattern" class= "text-danger">Enter only number</small>
+            
+  
+  
+  
+       </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Vendor Name</label>
+      <input [class.is-invalid]= "vendor.invalid && vendor.touched " formControlName= "vendor" type="text" class="form-control">
+  
+  
+      <div *ngIf="vendor.invalid && vendor.touched">
+            <small *ngIf ="vendor.errors?.required" class= "text-danger">Is required</small>
+  
+       </div>
+    </div>
+    
+    <button type="button" class="btn btn-dark">Submit</button>
+    </form>
+  
+  </div>
