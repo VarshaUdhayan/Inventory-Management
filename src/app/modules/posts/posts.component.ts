@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  productList:any;
+  
+  constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
+ //products :Products[] =[];
+
+  ngOnInit(): void 
+  {
+    this.dataService.getProducts(). subscribe (
+    data => 
+    {
+      this.productList= data;
+      console.log(data);
+    },
+    error => {
+      console.log(error);
+    });
+
   }
-
 }
+
+
+ 
+
+ 
+
+ 
+  

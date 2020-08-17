@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+//import { CommonModule } from '@angular/common';
 import { DefaultComponent } from 'src/app/layout/default/default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
+import { SalesComponent } from 'src/app/modules/sales/sales.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import {MatDividerModule} from '@angular/material/divider'; 
@@ -17,9 +19,10 @@ import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [DefaultComponent,
-    DashboardComponent,PostsComponent],
+    DashboardComponent,PostsComponent,SalesComponent],
   imports: [
-    CommonModule,
+    //CommonModule,
+   BrowserModule,
     RouterModule,
     SharedModule,
     MatSidenavModule,

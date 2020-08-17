@@ -1,0 +1,39 @@
+
+
+
+<div class="container">
+  
+  <input class="form-control ml-sm-2" type="text" placeholder="Search" aria-label="Search">
+ 
+  
+     <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>PurchaseId</th>
+            <th>SupplierId</th>
+            <th>ProductId</th>
+            <th>Productname</th>
+            <th>PurchaseDate</th>
+            <th>Priceperunit</th>
+            <th>quantity</th>
+            <th>TotalCost</th>
+          </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let sale of salesList">
+          <td>{{ sale._id }}</td>
+          <td>{{ sale.Supplierid }}</td>
+           <td>{{ sale.Productid._id }}</td>
+          <td>{{ sale.Productid.productname }}</td>
+          <td>{{ sale.PurchaseDate }}</td>
+          <td>{{ sale.Productid.priceperunit }}</td>
+          <td>{{ sale.Productid.quantity}}</td>
+          <td>
+            {{ sale.Productid.priceperunit *  sale.Productid.quantity || ''}}
+        </td>
+         
+
+        </tr>
+      </tbody>
+    </table>
+  </div>

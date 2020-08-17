@@ -20,12 +20,14 @@ import { PieComponent } from './widgets/pie/pie.component';
 
 
 
+
 @NgModule({
   declarations: [HeaderComponent,
     FooterComponent,
     SidebarComponent, 
     AreaComponent, 
     CardComponent, PieComponent],
+
   imports: [
     CommonModule,
     MatDividerModule,
